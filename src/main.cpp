@@ -109,7 +109,7 @@ class $modify(FPGameLayer, GJBaseGameLayer) {
 		s.step++;
 		float tw = m_gameState.m_timeWarp > 0.f ? m_gameState.m_timeWarp : 1.f;
 		if (dt > 0.f) s.stepDt = dt / tw;
-		GJBaseGameLayer::processCommands(dt);
+		GJBaseGameLayer::processCommands(dt, false, false);
 	}
 
 	// Кнопки обрабатываются внутри шага, значит step == шаг, на котором вход применился.
