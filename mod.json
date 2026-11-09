@@ -1,0 +1,59 @@
+{
+	"geode": "4.0.0",
+	"gd": {
+		"win": "*",
+		"android": "*",
+		"mac": "*",
+		"ios": "*"
+	},
+	"version": "v1.0.0",
+	"id": "playfulpixel846.frame-perfect-detector",
+	"name": "Frame Perfect Detector",
+	"developer": "playfulpixel846",
+	"description": "Считает frame perfect по физическим шагам (TPS) игры, а не по времени или FPS монитора.",
+	"settings": {
+		"fps-threshold": {
+			"name": "Длина «кадра» (FPS)",
+			"description": "Что считать одним кадром. 240 = 1 физ. шаг при 240 TPS, 60 = окно в 4 шага.",
+			"type": "int",
+			"default": 240,
+			"min": 30,
+			"max": 1000,
+			"control": { "input": true, "slider": false }
+		},
+		"tps-override": {
+			"name": "TPS вручную (0 = авто)",
+			"description": "Если авто-определение TPS у тебя ошибается (TPS bypass), укажи значение.",
+			"type": "int",
+			"default": 0,
+			"min": 0,
+			"max": 100000,
+			"control": { "input": true, "slider": false }
+		},
+		"display-mode": {
+			"name": "Режим показа",
+			"type": "string",
+			"default": "Counter",
+			"one-of": ["Counter", "Window"]
+		},
+		"window-duration": {
+			"name": "Длительность уведомления (мс)",
+			"type": "int",
+			"default": 1200,
+			"min": 300,
+			"max": 5000,
+			"control": { "input": true, "slider": true }
+		},
+		"sound": { "name": "Звук (ding)", "type": "bool", "default": true },
+		"sound-volume": {
+			"name": "Громкость звука",
+			"type": "int",
+			"default": 60,
+			"min": 0,
+			"max": 100,
+			"control": { "input": true, "slider": true }
+		},
+		"reset-on-restart": { "name": "Сброс счётчика при рестарте", "type": "bool", "default": true },
+		"detect-in-practice": { "name": "Считать в практике", "type": "bool", "default": true }
+	}
+}
