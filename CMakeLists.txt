@@ -6,6 +6,9 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 
 project(FramePerfectDetector VERSION 1.0.0)
 
+# обход ошибки fmt + Clang 20 на Windows
+add_compile_definitions(FMT_CONSTEVAL=)
+
 file(GLOB SOURCES src/*.cpp)
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
